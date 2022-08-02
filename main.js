@@ -28,7 +28,7 @@ function addButtonClickListeners() {
   const buttons = document.querySelectorAll("button");
   buttons.forEach(function (button) {
     button.addEventListener("click", () => {
-      storeDisplayClicks(button);
+      storeClicks(button);
     });
   });
 }
@@ -37,7 +37,7 @@ function addButtonClickListeners() {
 var numStoreArray = ["", "", ""];
 var answer;
 
-function storeDisplayClicks(button) {
+function storeClicks(button) {
   var clickDigit = button.classList.contains("digits");
   var clickFunction = button.classList.contains("functions");
   var clickEquals = button.classList.contains("equals");
@@ -47,7 +47,7 @@ function storeDisplayClicks(button) {
 
   if (clickClear) {
     numStoreArray = [];
-    document.getElementById("display").textContent = "";
+    displayClicks("0");
   }
 
   if (clickEquals) {
@@ -71,7 +71,7 @@ function storeDisplayClicks(button) {
     } else {
       numStoreArray[0] = clickValue;
     }
-    document.getElementById("display").textContent = numStoreArray[0];
+    displayClicks(numStoreArray[0]);
   }
 
   //the second digit in the calculation
@@ -81,19 +81,25 @@ function storeDisplayClicks(button) {
     } else {
       numStoreArray[2] = clickValue;
     }
-    document.getElementById("display").textContent = numStoreArray[2];
+    displayClicks(numStoreArray[2]);
   }
 }
 
+function displayClicks(toBeDisplayed) {
+  document.getElementById("display").textContent = toBeDisplayed;
+}
+
+//called once the numStoreArray[] is fully built out
 function computeClicks() {
   var num1 = numStoreArray[0];
   var operator = numStoreArray[1];
   var num2 = numStoreArray[2];
 
   answer = operate(operator, num1, num2);
+  displayClicks(answer);
+
   numStoreArray = [];
   numStoreArray[0] = answer;
-  document.getElementById("display").textContent = answer;
 }
 
 addButtonClickListeners();

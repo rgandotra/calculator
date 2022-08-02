@@ -10,25 +10,40 @@
   </head>
   <body>
     <div id="container">
-      <button class="digits" data-value="0" id="zero">0</button>
-      <button class="digits" data-value="1" id="one">1</button>
-      <button class="digits" data-value="2" id="two">2</button>
-      <button class="digits" data-value="3" id="three">3</button>
-      <button class="digits" data-value="4" id="four">4</button>
-      <button class="digits" data-value="5" id="five">5</button>
-      <button class="digits" data-value="6" id="six">6</button>
-      <button class="digits" data-value="7" id="seven">7</button>
-      <button class="digits" data-value="8" id="eight">8</button>
-      <button class="digits" data-value="9" id="nine">9</button>
-      <button class="functions" data-value="add" id="add">+</button>
-      <button class="functions" data-value="subtract" id="subtract">-</button>
-      <button class="functions" data-value="multiply" id="multiply">*</button>
-      <button class="functions" data-value="divide" id="divide">/</button>
+      <div class="button-container">
+        <div id="display">0</div>
+        <div class="row">
+          <button class="digits" data-value="7" id="seven">7</button>
+          <button class="digits" data-value="8" id="eight">8</button>
+          <button class="digits" data-value="9" id="nine">9</button>
+          <button class="functions" data-value="divide" id="divide">/</button>
+        </div>
 
-      <button class="equals" data-value="=" id="equals">=</button>
-      <button class="clear" data-value="" id="clear">clr</button>
+        <div class="row">
+          <button class="digits" data-value="4" id="four">4</button>
+          <button class="digits" data-value="5" id="five">5</button>
+          <button class="digits" data-value="6" id="six">6</button>
+          <button class="functions" data-value="multiply" id="multiply">
+            *
+          </button>
+        </div>
 
-      <div id="display">2345</div>
+        <div class="row">
+          <button class="digits" data-value="1" id="one">1</button>
+          <button class="digits" data-value="2" id="two">2</button>
+          <button class="digits" data-value="3" id="three">3</button>
+          <button class="functions" data-value="subtract" id="subtract">
+            -
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="digits" data-value="0" id="zero">0</button>
+          <button class="clear" data-value="" id="clear">c</button>
+          <button class="equals" data-value="=" id="equals">=</button>
+          <button class="functions" data-value="add" id="add">+</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
