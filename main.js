@@ -1,21 +1,21 @@
 function add(num1, num2) {
-  return parseInt(num1) + parseInt(num2);
+  return (parseFloat(num1) + parseFloat(num2)).toFixed(3);
 }
 
 function subtract(num1, num2) {
-  return parseInt(num1) - parseInt(num2);
+  return (parseFloat(num1) - parseFloat(num2)).toFixed(3);
 }
 
 function multiply(num1, num2) {
-  return parseInt(num1) * parseInt(num2);
+  return (parseFloat(num1) * parseFloat(num2)).toFixed(3);
 }
 
 function divide(num1, num2) {
-  var divideByZero = num2 === 0;
+  var divideByZero = num2 === "0";
   if (divideByZero) {
-    return "You cannot divide by 0";
+    alert("Cannot divide by zero!");
   } else {
-    return parseInt(num1) / parseInt(num2);
+    return (parseFloat(num1) / parseFloat(num2)).toFixed(3);
   }
 }
 
@@ -96,8 +96,12 @@ function computeClicks() {
   var num2 = numStoreArray[2];
 
   answer = operate(operator, num1, num2);
-  displayClicks(answer);
 
+  if (!answer) {
+    displayClicks("0");
+  } else {
+    displayClicks(answer);
+  }
   numStoreArray = [];
   numStoreArray[0] = answer;
 }
